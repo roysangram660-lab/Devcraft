@@ -1,0 +1,14 @@
+import React from 'react'; import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+
+// Pages function Home() { return ( <div className="p-6 text-center"> <h1 className="text-4xl font-bold mb-4">Welcome to DevCraft</h1> <p className="text-lg text-gray-600">Showcasing my projects, skills, and achievements.</p> </div> ); }
+
+function Projects() { return ( <div className="p-6"> <h2 className="text-2xl font-semibold mb-4">Projects</h2> <ul className="list-disc list-inside"> <li>Portfolio Website - React & Tailwind</li> <li>Stock Market Tracker - JavaScript & API</li> <li>AI Chatbot - Python & OpenAI API</li> </ul> </div> ); }
+
+function About() { return ( <div className="p-6"> <h2 className="text-2xl font-semibold mb-4">About Me</h2> <p>I am Sangram Roy, a passionate creator and problem solver who loves building impactful digital experiences.</p> </div> ); }
+
+function Contact() { return ( <div className="p-6"> <h2 className="text-2xl font-semibold mb-4">Contact</h2> <p>Email: sangram@example.com</p> </div> ); }
+
+// Layout function Navbar() { return ( <nav className="bg-gray-900 text-white p-4 flex justify-center gap-6"> <Link to="/">Home</Link> <Link to="/projects">Projects</Link> <Link to="/about">About</Link> <Link to="/contact">Contact</Link> </nav> ); }
+
+export default function App() { return ( <Router> <Navbar /> <Routes> <Route path="/" element={<Home />} /> <Route path="/projects" element={<Projects />} /> <Route path="/about" element={<About />} /> <Route path="/contact" element={<Contact />} /> </Routes> </Router> ); }
+
